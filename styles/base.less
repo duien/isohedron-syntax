@@ -1,0 +1,196 @@
+@import "syntax-variables";
+
+atom-text-editor {
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .gutter {
+    background-color: @syntax-gutter-background-color;
+    color: @syntax-gutter-text-color;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @syntax-gutter-background-color-selected;
+        color: @syntax-gutter-text-color-selected;
+      }
+
+      &.cursor-line-no-selection {
+        color: @syntax-gutter-text-color-selected;
+      }
+    }
+  }
+
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @light-gray;
+  }
+
+  .invisible {
+    color: @syntax-text-color;
+  }
+
+  .cursor {
+    color: @syntax-cursor-color;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+}
+
+atom-text-editor {
+  .syntax--punctuation,
+  .syntax--operator,
+  .syntax--brace {
+    color: @base3;
+  }
+  .syntax--comment {
+    background: @orange-bg;
+    color: @orange-text;
+    
+    .syntax--comment.syntax--punctuation {
+      background: none;
+      color: @orange-text-sec;
+    }
+    
+    &.syntax--wildcard,
+    &.syntax--unused {
+      background: none;
+      color: @base3;
+    }
+  }
+  .syntax--comment.syntax--leading {
+    background: none;
+  }
+  
+  .syntax--name.syntax--class,
+  .syntax--name.syntax--module,
+  .syntax--name.syntax--function,
+  .syntax--css.syntax--entity {
+    background: @purple-bg;
+    color: @purple-text;
+    
+    .syntax--punctuation,
+    .syntax--entity.syntax--punctuation {
+      background: none;
+      color: @purple-text-sec;
+    }
+  }
+  
+  // Fix method names for Java and C
+  .syntax--method-call,
+  .syntax--function-call {
+    .syntax--name.syntax--function {
+      background: none;
+      color: @syntax-text-color;
+    }
+  }
+  
+  
+  .syntax--constant.syntax--language,
+  .syntax--constant.syntax--numeric,
+  .syntax--constant.syntax--support,
+  .syntax--css.syntax--constant.syntax--other, {
+    background: @teal-bg;
+    color: @teal-text;
+    
+    .syntax--constant.syntax--punctuation,
+    .syntax--unit,
+    .syntax--keyword.syntax--other.syntax--unit {
+      background: none;
+      color: @teal-text-sec;
+    }
+  }
+  .syntax--keyword.syntax--other.syntax--unit {
+    background: @teal-bg;
+    color: @teal-text-sec;
+  }
+  
+  .syntax--constant.syntax--symbol {
+    background: @blue-bg;
+    color: @blue-text;
+    
+    .syntax--punctuation {
+      color: @blue-text-sec;
+    }
+  }
+  
+  .syntax--string {
+    background: @green-bg;
+    color: @green-text;
+    
+    .syntax--string {
+      background: none;
+    }
+    .syntax--punctuation.syntax--string,
+    .syntax--punctuation.syntax--embedded,
+    .syntax--escape {
+      color: @green-text-sec;
+    }
+  }
+  
+  .syntax--regexp.syntax--string {
+    background: @teal-bg;
+    color: @teal-text;
+    
+    .syntax--punctuation,
+    .syntax--escape {
+      background: none;
+      color: @teal-text-sec;
+    }
+  }
+  
+  .syntax--keyword.syntax--control {
+    font-weight: bold;
+  }
+  
+  // Markdown & markup
+  .syntax--markup, .syntax--text {
+    .syntax--punctuation {
+      color: @base3;
+    }
+    &.syntax--bold {
+      font-weight: bold;
+    }
+    .syntax--string .syntax--punctuation {
+      color: @green-text-sec;
+    }
+    .syntax--raw {
+      background: @teal-bg;
+      color: @teal-text;
+      .syntax--punctuation {
+        color: @teal-text-sec;
+      }
+    }
+    // .syntax--fenced > .syntax--punctuation{
+    //   background: @teal-bg;
+    //   color: @teal-text-sec;
+    // }
+    .syntax--link.syntax--label {
+      background: @purple-bg;
+      color: @purple-text;
+      .syntax--punctuation {
+        color: @purple-text-sec;
+      }
+    }
+    .syntax--link.syntax--destination,
+    .syntax--hyperlink {
+      background: @blue-bg;
+      color: @blue-text;
+    }
+  }
+  
+}

@@ -1,0 +1,17 @@
+{
+  "name": "isohedron-syntax",
+  "theme": "syntax",
+  "version": "0.0.0",
+  "description": "A minimalist theme of highlighter on paper",
+  "keywords": [
+    "syntax",
+    "theme",
+    "light",
+    "minimalist"
+  ],
+  "repository": "https://github.com/duien/isohedron-syntax",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}
