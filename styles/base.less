@@ -51,6 +51,8 @@ atom-text-editor {
   }
 }
 
+// Syntax highlights, like with a highlighter
+
 atom-text-editor {
   .syntax--punctuation,
   .syntax--operator,
@@ -58,12 +60,12 @@ atom-text-editor {
     color: @base3;
   }
   .syntax--comment {
-    background: @orange-bg;
-    color: @orange-text;
+    background: @yellow-bg;
+    color: @yellow-text;
     
     .syntax--comment.syntax--punctuation {
       background: none;
-      color: @orange-text-sec;
+      color: @yellow-text-sec;
     }
     
     &.syntax--wildcard,
@@ -99,35 +101,37 @@ atom-text-editor {
     }
   }
   
-  
+  // Built-in constants (true, false) and numbers, including units
   .syntax--constant.syntax--language,
   .syntax--constant.syntax--numeric,
   .syntax--constant.syntax--support,
   .syntax--css.syntax--constant.syntax--other, {
-    background: @teal-bg;
-    color: @teal-text;
+    background: @blue-bg;
+    color: @blue-text;
     
     .syntax--constant.syntax--punctuation,
     .syntax--unit,
     .syntax--keyword.syntax--other.syntax--unit {
       background: none;
-      color: @teal-text-sec;
-    }
-  }
-  .syntax--keyword.syntax--other.syntax--unit {
-    background: @teal-bg;
-    color: @teal-text-sec;
-  }
-  
-  .syntax--constant.syntax--symbol {
-    background: @blue-bg;
-    color: @blue-text;
-    
-    .syntax--punctuation {
       color: @blue-text-sec;
     }
   }
+  .syntax--keyword.syntax--other.syntax--unit {
+    background: @blue-bg;
+    color: @blue-text-sec;
+  }
   
+  // Symbols
+  .syntax--constant.syntax--symbol {
+    background: @orange-bg;
+    color: @orange-text;
+    
+    .syntax--punctuation {
+      color: @orange-text-sec;
+    }
+  }
+  
+  // Strings
   .syntax--string {
     background: @green-bg;
     color: @green-text;
@@ -142,6 +146,7 @@ atom-text-editor {
     }
   }
   
+  // Regexes
   .syntax--regexp.syntax--string {
     background: @teal-bg;
     color: @teal-text;
@@ -153,6 +158,7 @@ atom-text-editor {
     }
   }
   
+  // control keywords
   .syntax--keyword.syntax--control {
     font-weight: bold;
   }
