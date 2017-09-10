@@ -44,6 +44,11 @@ atom-text-editor {
 
   .cursor {
     color: @syntax-cursor-color;
+
+    // Make cursor wider
+    border-width: 3px;
+    position: relative;
+    left: -1px;
   }
 
   .selection .region {
@@ -54,20 +59,25 @@ atom-text-editor {
 // Syntax highlights, like with a highlighter
 
 atom-text-editor {
+
+  // Fade out punctuation
   .syntax--punctuation,
   .syntax--operator,
   .syntax--brace {
     color: @base3;
   }
+
+  // Yellow sticky-note comments
   .syntax--comment {
     background: @yellow-bg;
     color: @yellow-text;
-    
+
     .syntax--comment.syntax--punctuation {
       background: none;
       color: @yellow-text-sec;
     }
-    
+
+    // Elixir unused function arguments
     &.syntax--wildcard,
     &.syntax--unused {
       background: none;
@@ -77,21 +87,22 @@ atom-text-editor {
   .syntax--comment.syntax--leading {
     background: none;
   }
-  
+
+  // Class and method definitions
   .syntax--name.syntax--class,
   .syntax--name.syntax--module,
   .syntax--name.syntax--function,
   .syntax--css.syntax--entity {
     background: @purple-bg;
     color: @purple-text;
-    
+
     .syntax--punctuation,
     .syntax--entity.syntax--punctuation {
       background: none;
       color: @purple-text-sec;
     }
   }
-  
+
   // Fix method names for Java and C
   .syntax--method-call,
   .syntax--function-call {
@@ -100,42 +111,54 @@ atom-text-editor {
       color: @syntax-text-color;
     }
   }
-  
+
   // Built-in constants (true, false) and numbers, including units
   .syntax--constant.syntax--language,
   .syntax--constant.syntax--numeric,
   .syntax--constant.syntax--support,
   .syntax--css.syntax--constant.syntax--other, {
-    background: @blue-bg;
-    color: @blue-text;
-    
+    background: @teal-bg;
+    color: @teal-text;
+
     .syntax--constant.syntax--punctuation,
     .syntax--unit,
     .syntax--keyword.syntax--other.syntax--unit {
       background: none;
-      color: @blue-text-sec;
+      color: @teal-text-sec;
     }
   }
   .syntax--keyword.syntax--other.syntax--unit {
-    background: @blue-bg;
-    color: @blue-text-sec;
+    background: @teal-bg;
+    color: @teal-text-sec;
   }
-  
+
   // Symbols
   .syntax--constant.syntax--symbol {
-    background: @orange-bg;
-    color: @orange-text;
-    
+    background: @blue-bg;
+    color: @blue-text;
+
     .syntax--punctuation {
-      color: @orange-text-sec;
+      color: @blue-text-sec;
     }
   }
-  
+
+  // HTML tags
+  .syntax--html.syntax--tag {
+    &.syntax--entity.syntax--name {
+      background: @blue-bg;
+      color: @blue-text;
+    }
+    &.syntax--punctuation {
+      background: @blue-bg;
+      color: @blue-text-sec;
+    }
+  }
+
   // Strings
   .syntax--string {
     background: @green-bg;
     color: @green-text;
-    
+
     .syntax--string {
       background: none;
     }
@@ -145,24 +168,24 @@ atom-text-editor {
       color: @green-text-sec;
     }
   }
-  
+
   // Regexes
   .syntax--regexp.syntax--string {
-    background: @teal-bg;
-    color: @teal-text;
-    
+    background: @orange-bg;
+    color: @orange-text;
+
     .syntax--punctuation,
     .syntax--escape {
       background: none;
-      color: @teal-text-sec;
+      color: @orange-text-sec;
     }
   }
-  
+
   // control keywords
   .syntax--keyword.syntax--control {
     font-weight: bold;
   }
-  
+
   // Markdown & markup
   .syntax--markup, .syntax--text {
     .syntax--punctuation {
@@ -198,5 +221,4 @@ atom-text-editor {
       color: @blue-text;
     }
   }
-  
 }
