@@ -143,18 +143,17 @@ atom-text-editor {
   }
 
   // HTML tags
-  .syntax--html.syntax--tag {
-    &.syntax--entity.syntax--name {
-      background: @blue-bg;
-      color: @blue-text;
+  .syntax--html, .syntax--jsx {
+    .syntax--tag {
+      &.syntax--entity.syntax--name {
+        background: @blue-bg;
+        color: @blue-text;
+      }
+      &.syntax--punctuation {
+        background: @blue-bg;
+        color: @blue-text-sec;
+      }
     }
-    &.syntax--punctuation {
-      background: @blue-bg;
-      color: @blue-text-sec;
-    }
-  }
-  
-  .syntax--html {
     .syntax--embedded {
       .syntax--embedded.syntax--punctuation {
         background: @purple-bg;
